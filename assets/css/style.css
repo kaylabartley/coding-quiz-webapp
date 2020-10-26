@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+/*putting space between the navigation link and the timer */
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; 
+}
+header nav li {
+    padding: 15px;
+}
+/*making "view high scores" purple and not underlined*/
+header a {
+    text-decoration: none;
+    color: rgb(186, 122, 212);
+}
+/*centering the form in the middle of the screen*/
+main {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    align-items: flex-start;
+}
+form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+form h1 {
+    padding: 15px;
+    flex: 2;
+    font-size: 40px;
+}
+form p {
+    font-size: 20px;
+    padding: 15px;
+    flex: 1;
+}
+/*changing buttons color and making the sides curved*/
+.btn {
+    margin: 15px;
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    background-color: rgb(52, 28, 115);
+    color: rgb(175, 167, 208);
+    border-radius: 12px;
+}
+/*when you hover over the button, it changes color*/
+.btn:hover {
+    background-color: rgb(188, 96, 231);
+    color: rgb(248, 222, 253);
+  }
+
