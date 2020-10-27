@@ -8,6 +8,7 @@ var quizBoxEl = document.querySelector("#quiz");
 var responseEl = document.querySelector(".response");
 var i = -1;
 var timeLeft=75;
+var testFinished = false;
 
 var qna = [
     {
@@ -57,20 +58,22 @@ var timer = function(){
     var timeInterval = setInterval(function() {
         if (timeLeft >= 1) {
           timerEl.textContent = timeLeft;
+          if(testFinished){
+              clearInterval(timeInterval);
+          }
           timeLeft--;
         } 
         else {
-          timerEl.textContent = '';
+          timerEl.textContent = 0;
           clearInterval(timeInterval);
         }
     }, 1000);
 }
+var submitInfo = function(t){
+    quizBoxEl.innerHTML = "<h2>All Done!</h2><p>Your final score is "+t+".</p><span><label for='initials'>Enter initials:</label><input type='text' id='initials' name='initials'><button class='submit-btn'>Submit</button></span>";
 
+}
 var nextQuestion = function(){
-    if(i===5){
-       // submitInfo();
-        return 0;
-    }
     ++i;
     quizBoxEl.className = "qna";
     quizBoxEl.innerHTML = "<h2>" + qna[i].q + "</h2><button class='answerbtn' id='a1'>" + qna[i].a1 + "</button><button class='answerbtn' id='a2'>" + qna[i].a2 + "</button><button class='answerbtn' id='a3'>" + qna[i].a3 + "</button><button class='answerbtn' id='a4'>" + qna[i].a4 + "</button>";
@@ -78,56 +81,96 @@ var nextQuestion = function(){
         event.preventDefault();
         if(qna[i].correct==="a1"){
             responseEl.innerHTML="<em>Correct!</em>";
-            nextQuestion();
             responseEl.className="response response-border";
+            if(i===4){
+                submitInfo(timeLeft);
+                testFinished=true;
+                return 0;
+            }
+            nextQuestion(); 
         }
         else{
             responseEl.innerHTML="<em>Wrong!</em>";
-            timeLeft=timeLeft-10;
-            nextQuestion();
             responseEl.className="response response-border";
+            timeLeft=timeLeft-15;
+            if(i===4){
+                submitInfo(timeLeft);
+                testFinished=true;
+                return 0;
+            }
+            nextQuestion();
         }
     });
     document.querySelector("#a2").addEventListener("click", function(event){
         event.preventDefault();
         if(qna[i].correct==="a2"){
             responseEl.innerHTML="<em>Correct!</em>";
-            nextQuestion();
             responseEl.className="response response-border";
+            if(i===4){
+                submitInfo(timeLeft);
+                testFinished=true;
+                return 0;
+            }
+            nextQuestion(); 
         }
        else{
             responseEl.innerHTML="<em>Wrong!</em>";
-            timeLeft=timeLeft-10;
-            nextQuestion();
             responseEl.className="response response-border";
+            timeLeft=timeLeft-15;
+            if(i===4){
+                submitInfo(timeLeft);
+                testFinished=true;
+                return 0;
+            }
+            nextQuestion();
         }
     });
     document.querySelector("#a3").addEventListener("click", function(event){
         event.preventDefault();
         if(qna[i].correct==="a3"){
             responseEl.innerHTML="<em>Correct!</em>";
-            nextQuestion();
             responseEl.className="response response-border";
+            if(i===4){
+                submitInfo(timeLeft);
+                testFinished=true;
+                return 0;
+            }
+            nextQuestion(); 
         }
         else{
             responseEl.innerHTML="<em>Wrong!</em>";
-            timeLeft=timeLeft-10;
-            nextQuestion();
             responseEl.className="response response-border";
+            timeLeft=timeLeft-15;
+            if(i===4){
+                submitInfo(timeLeft);
+                testFinished=true;
+                return 0;
+            }
+            nextQuestion();
         }
     });
     document.querySelector("#a4").addEventListener("click", function(event){
         event.preventDefault();
         if(qna[i].correct==="a4"){
             responseEl.innerHTML="<em>Correct!</em>";
-            nextQuestion();
             responseEl.className="response response-border";
+            if(i===4){
+                submitInfo(timeLeft);
+                testFinished=true;
+                return 0;
+            }
+            nextQuestion(); 
         }
         else{
             responseEl.innerHTML="<em>Wrong!</em>";
-            timeLeft=timeLeft-10;
-            nextQuestion();
             responseEl.className="response response-border";
+            timeLeft=timeLeft-15;
+            if(i===4){
+                submitInfo(timeLeft);
+                testFinished=true;
+                return 0;
+            }
+            nextQuestion();
         }
     });
 }
