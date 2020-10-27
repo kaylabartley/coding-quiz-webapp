@@ -52,7 +52,7 @@ form h2 {
     text-align: left;
     padding: 15px;
     flex: 2;
-    font-size: 35px;
+    font-size: 30px;
 }
 form p {
     font-size: 20px;
@@ -82,14 +82,25 @@ form p {
     outline: none;
     border: none;
     padding: 10px;
-    font-size: 20px;
+    font-size: 15px;
     background-color: rgb(52, 28, 115);
     color: rgb(175, 167, 208);
     border-radius: 6px;
     text-align: left;
-    width: 35%;
+    width: 40%;
 }
 .answerbtn:hover {
     background-color: rgb(188, 96, 231);
     color: rgb(248, 222, 253);
+}
+.response {
+    margin: 30px;
+    font-weight: lighter;
+    color: rgb(189, 189, 189);
+    font-size: 28px;
+    width: 50%;
+}
+.response-border {
+    border-top: 1px solid;
+    padding-top: 15px;
 }

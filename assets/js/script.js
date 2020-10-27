@@ -5,7 +5,7 @@ var timerEl = document.querySelector("#timer");
 //create element that holds q&a to the quiz
 var quizBoxEl = document.querySelector("#quiz");
 //create element for the response of 'wrong or 'correct'
-var responseEl = document.querySelector("#response");
+var responseEl = document.querySelector(".response");
 var i = -1;
 var timeLeft=75;
 
@@ -77,48 +77,57 @@ var nextQuestion = function(){
     document.querySelector("#a1").addEventListener("click", function(event){
         event.preventDefault();
         if(qna[i].correct==="a1"){
-            responseEl.innerHTML="Correct!";
+            responseEl.innerHTML="<em>Correct!</em>";
             nextQuestion();
+            responseEl.className="response response-border";
         }
         else{
-            responseEl.innerHTML="Wrong!";
+            responseEl.innerHTML="<em>Wrong!</em>";
             timeLeft=timeLeft-10;
             nextQuestion();
+            responseEl.className="response response-border";
         }
     });
     document.querySelector("#a2").addEventListener("click", function(event){
         event.preventDefault();
         if(qna[i].correct==="a2"){
-            responseEl.innerHTML="Correct!";
+            responseEl.innerHTML="<em>Correct!</em>";
             nextQuestion();
+            responseEl.className="response response-border";
         }
        else{
-            responseEl.innerHTML="Wrong!";
+            responseEl.innerHTML="<em>Wrong!</em>";
             timeLeft=timeLeft-10;
             nextQuestion();
+            responseEl.className="response response-border";
         }
     });
     document.querySelector("#a3").addEventListener("click", function(event){
         event.preventDefault();
         if(qna[i].correct==="a3"){
-            responseEl.innerHTML="Correct!";
+            responseEl.innerHTML="<em>Correct!</em>";
             nextQuestion();
+            responseEl.className="response response-border";
         }
         else{
-            responseEl.innerHTML="Wrong!";
+            responseEl.innerHTML="<em>Wrong!</em>";
             timeLeft=timeLeft-10;
             nextQuestion();
+            responseEl.className="response response-border";
         }
     });
     document.querySelector("#a4").addEventListener("click", function(event){
         event.preventDefault();
         if(qna[i].correct==="a4"){
-            responseEl.innerHTML="Correct!";
+            responseEl.innerHTML="<em>Correct!</em>";
+            nextQuestion();
+            responseEl.className="response response-border";
         }
         else{
-            responseEl.innerHTML="Wrong!";
+            responseEl.innerHTML="<em>Wrong!</em>";
             timeLeft=timeLeft-10;
             nextQuestion();
+            responseEl.className="response response-border";
         }
     });
 }
