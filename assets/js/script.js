@@ -71,7 +71,20 @@ var timer = function(){
 }
 var submitInfo = function(t){
     quizBoxEl.innerHTML = "<h2>All Done!</h2><p>Your final score is "+t+".</p><span><label for='initials'>Enter initials:</label><input type='text' id='initials' name='initials'><button class='submit-btn'>Submit</button></span>";
-
+    document.querySelector(".submit-btn").addEventListener("click", function(event){
+        event.preventDefault();
+        var initials = document.querySelector("input[name='initials']").value;
+        var score = t.toString;
+        localStorage.setItem("initials", initials);
+        localStorage.setItem("score", score);
+        if(initials){
+            location.href = "./highscore.html";
+        }
+        else{
+            window.alert('error', 'Must enter initials before submitting.');
+        }
+        quizBoxEl.reset();
+    })
 }
 var nextQuestion = function(){
     ++i;
