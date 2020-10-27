@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Helvetica, Arial, sans-serif;
+    /*outline: 1px solid red;*/
 }
 /*putting space between the navigation link and the timer */
 header nav ul {
@@ -23,9 +24,10 @@ header a {
 /*centering the form in the middle of the screen*/
 main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: 30px;
-    align-items: flex-start;
+    align-items: center;
 }
 form {
     width: 50%;
