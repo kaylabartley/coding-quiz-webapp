@@ -9,6 +9,8 @@ var responseEl = document.querySelector(".response");
 var i = -1;
 var timeLeft=75;
 var testFinished = false;
+var submitTimes = -1;
+var highScoreData=[];
 
 var qna = [
     {
@@ -73,15 +75,24 @@ var submitInfo = function(t){
     quizBoxEl.innerHTML = "<h2>All Done!</h2><p>Your final score is "+t+".</p><span><label for='initials'>Enter initials:</label><input type='text' id='initials' name='initials'><button class='submit-btn'>Submit</button></span>";
     document.querySelector(".submit-btn").addEventListener("click", function(event){
         event.preventDefault();
-        var initials = document.querySelector("input[name='initials']").value;
-        var score = t.toString;
-        localStorage.setItem("initials", initials);
-        localStorage.setItem("score", score);
+
         if(initials){
+            ++submitTimes;
+            var init = document.querySelector("input[name='initials']").value;
+            var score = t.toString;
+            highScoreData[submitTimes]={};
+            highScoreData[submitTimes].i = init;
+            highScoreData[submitTimes].score = score;
+            /*localStorage.setItem("initials", initials);
+            localStorage.setItem("score", score);*/
+            var hsListEl = document.querySelector("#list");
+            var listItemEl = document.createElement("li");
+            listItemEl.className = "task-item";
+            listItemEl.innerHTML = (i+1) + ". " + initials + "-" + score;
             location.href = "./highscore.html";
         }
         else{
-            window.alert('error', 'Must enter initials before submitting.');
+            window.alert("Must enter initials before submitting.");
         }
         quizBoxEl.reset();
     })

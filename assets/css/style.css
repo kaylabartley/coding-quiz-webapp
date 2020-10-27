@@ -130,4 +130,35 @@ form input {
 .submit-btn:hover {
     background-color: rgb(188, 96, 231);
     color: rgb(248, 222, 253);
-  }
+}
+#hs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width:50%;
+    margin: 20px auto;
+}
+#hs h1{
+    padding-bottom: 10px;
+}
+#hs span {
+    padding-top: 5px;
+}
+#hs button {
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 5px 10px;;
+    font-size: 15px;
+    background-color: rgb(52, 28, 115);
+    color: rgb(175, 167, 208);
+    border-radius: 7px;
+}
+#hs button:hover {
+    background-color: rgb(188, 96, 231);
+    color: rgb(248, 222, 253);
+}
+#list {
+    background-color: rgb(218, 209, 233);
+}
