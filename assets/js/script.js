@@ -4,14 +4,10 @@ var buttonEl = document.querySelector("#start-quiz");
 var timerEl = document.querySelector("#timer");
 //create element that holds q&a to the quiz
 var quizBoxEl = document.querySelector("#quiz");
-//create elements for the answer buttons
-/*var a1BtnEl = document.querySelector("#a1");
-var a2BtnEl = document.querySelector("#a2");
-var a3BtnEl = document.querySelector("#a3");
-var a4BtnEl = document.querySelector("#a4");*/
 //create element for the response of 'wrong or 'correct'
 var responseEl = document.querySelector("#response");
 var i = -1;
+var timeLeft=75;
 
 var qna = [
     {
@@ -57,7 +53,6 @@ var qna = [
 
 ]
 var timer = function(){
-    var timeLeft=75;
     //interval to countdown from 75
     var timeInterval = setInterval(function() {
         if (timeLeft >= 1) {
@@ -70,12 +65,14 @@ var timer = function(){
         }
     }, 1000);
 }
+
 var nextQuestion = function(){
     if(i===5){
        // submitInfo();
         return 0;
     }
     ++i;
+    quizBoxEl.className = "qna";
     quizBoxEl.innerHTML = "<h2>" + qna[i].q + "</h2><button class='answerbtn' id='a1'>" + qna[i].a1 + "</button><button class='answerbtn' id='a2'>" + qna[i].a2 + "</button><button class='answerbtn' id='a3'>" + qna[i].a3 + "</button><button class='answerbtn' id='a4'>" + qna[i].a4 + "</button>";
     document.querySelector("#a1").addEventListener("click", function(event){
         event.preventDefault();
@@ -85,6 +82,7 @@ var nextQuestion = function(){
         }
         else{
             responseEl.innerHTML="Wrong!";
+            timeLeft=timeLeft-10;
             nextQuestion();
         }
     });
@@ -96,6 +94,7 @@ var nextQuestion = function(){
         }
        else{
             responseEl.innerHTML="Wrong!";
+            timeLeft=timeLeft-10;
             nextQuestion();
         }
     });
@@ -107,6 +106,7 @@ var nextQuestion = function(){
         }
         else{
             responseEl.innerHTML="Wrong!";
+            timeLeft=timeLeft-10;
             nextQuestion();
         }
     });
@@ -117,6 +117,7 @@ var nextQuestion = function(){
         }
         else{
             responseEl.innerHTML="Wrong!";
+            timeLeft=timeLeft-10;
             nextQuestion();
         }
     });

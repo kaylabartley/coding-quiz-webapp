@@ -36,10 +36,23 @@ form {
     align-items: center;
     text-align: center;
 }
+.qna {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+}
 form h1 {
     padding: 15px;
     flex: 2;
     font-size: 40px;
+}
+form h2 {
+    text-align: left;
+    padding: 15px;
+    flex: 2;
+    font-size: 35px;
 }
 form p {
     font-size: 20px;
@@ -63,4 +76,20 @@ form p {
     background-color: rgb(188, 96, 231);
     color: rgb(248, 222, 253);
   }
-
+.answerbtn {
+    margin: 3px;
+    flex: 1;
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(52, 28, 115);
+    color: rgb(175, 167, 208);
+    border-radius: 6px;
+    text-align: left;
+    width: 35%;
+}
+.answerbtn:hover {
+    background-color: rgb(188, 96, 231);
+    color: rgb(248, 222, 253);
+}
